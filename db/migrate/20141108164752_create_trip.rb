@@ -8,7 +8,7 @@ class CreateTrip < ActiveRecord::Migration
     	t.string :departure_country
     	t.datetime :start_date
     	t.datetime :end_date
-    	t.boolean :is_flexible, default: 0
+    	t.boolean :is_flexible, default: false
     	t.string :food, array: true, default: []
     	t.string :music, array: true, default: []
     	t.string :activities, array: true, default: []
