@@ -7,7 +7,13 @@ class TripsController < ApplicationController
 
 	def create
 		@trip = Trip.find(params[:id])
-		render json: @trip
+		if @trip.save
+	        format.html { redirect_to @trip, notice: 'Trip was successfully created.' }
+	        format.json { render :show, status: :created, location: @trip }
+      	else
+	        format.html { render :new }
+	        format.json { render json: @trip.errors, status: :unprocessable_entity }
+      end
 	end
 
 	def new
