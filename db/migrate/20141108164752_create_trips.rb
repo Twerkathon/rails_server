@@ -1,6 +1,6 @@
 require 'date'
 
-class CreateTrip < ActiveRecord::Migration
+class CreateTrips < ActiveRecord::Migration
   def change
     create_table :trips do |t|
     	t.string :climate
